@@ -35,8 +35,19 @@ for($i=0;$number!=0;$i++)
     $number = (int)($number/ 10);
 }
 
-sort($sum);
+$ff=0;
+for ($b=0; $b < $i - 1; $b++) {
+    for ($j = 0; $j < $i - $b - 1; $j++) {
+        if ($sum[$j] > $sum[$j + 1]) {
+            $ff = $sum[$j];
+            $sum[$j] = $sum[$j + 1];
+            $sum[$j + 1] = $ff;
+        }
+    }
+    }
+echo '<pre>';
 print_r($sum);
+echo '</pre>';
 ?>
 <p>3 ЗАДАНИЕ</p>
 
@@ -49,9 +60,20 @@ for($i=0;$number!=0;$i++)
     $sum1[$i]=$number%10;
     $number = (int)($number/ 10);
 }
+$ff=0;
+for ($b=0; $b < $i - 1; $b++) {
+    for ($j = 0; $j < $i - $b - 1; $j++) {
+        if ($sum1[$j] < $sum1[$j + 1]) {
+            $ff = $sum1[$j];
+            $sum1[$j] = $sum1[$j + 1];
+            $sum1[$j + 1] = $ff;
+        }
+    }
+}
 
-rsort($sum1);
+echo '<pre>';
 print_r($sum1);
+echo '</pre>';
 ?>
 
 </body>
