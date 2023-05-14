@@ -12,12 +12,13 @@ nav
     height: 130px;
     display: flex;
     align-items: center;
-}
-.tableMen
-{
-    margin-left: 20px;
 
 }
+.navDiv{
+    margin-left: 20px;
+}
+
+
 .f2
 {
     width: 70%;
@@ -28,7 +29,7 @@ nav
 }
 .myfoto
 {
-
+color: mediumturquoise;
     margin:0 0 0 20px;
 
 }
