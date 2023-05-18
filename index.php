@@ -1,6 +1,6 @@
 <?php
-if (isset($_GET['fon'])){
-    setcookie('fon',$_GET['fon'],time()+3600*24);
+if (isset($_GET['selectColor'])){
+    setcookie('selectColor',$_GET['selectColor'],time()+3600*24);
 }
 ?>
 <!DOCTYPE html>
@@ -12,27 +12,23 @@ if (isset($_GET['fon'])){
     <link rel="stylesheet" type="text/css" href="styles/style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
-    <?php
-    if ($_COOKIE['fon']==1){
-        echo 'body{background: burlywood;}';
+        body{
+        background: <?php echo $_COOKIE['selectColor']; ?>;
     }
-    if ($_COOKIE['fon']==2){
-        echo 'body{background: blanchedalmond;}';
+
+    body{
+        background: <?php echo $_GET['selectColor']; ?>;
     }
-    if ($_COOKIE['fon']==3){
-        echo 'body{background: mediumturquoise;}';
-    }
-    ?>
+
     </style>
 </head>
 
 <body>
+
+
 <form style="text-align: right">
-    <select name="fon">
-        <option value="1">burlywood</option>
-        <option value="2">blanchedalmond</option>
-        <option value="3">mediumturquoise</option>
-    </select>
+    <label for="selectColor"><span style="font-size: 1vw ;border:1px black solid">выберите цвет фона страницы</span></label>
+    <input type="color" name="selectColor" id="selectColor">
     <button type="submit">OK</button>
 </form>
 <?php include 'moduls/nav.php'; ?>
